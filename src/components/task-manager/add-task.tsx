@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { useForm } from "react-hook-form"
 import {
@@ -99,9 +97,6 @@ export function AddTask({open,handleClose,addTaskHandler,editTaskId}:AddTaskProp
       <DialogContent className="w-[90vw] max-w-[425px] sm:w-full">
         <DialogHeader>
           <DialogTitle>{editTaskId ? 'Update' : "Add New" }  Task</DialogTitle>
-          {/* <DialogDescription>
-            Fill out the form to create a new task. Click save when you're done.
-          </DialogDescription> */}
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
