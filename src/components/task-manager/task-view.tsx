@@ -63,7 +63,7 @@ export default function TasksView() {
         <div className="flex flex-col w-full">
             <div className="flex items-center justify-between px-6 pt-6">
                 <h1 className="text-2xl font-bold">Task Manager</h1>
-                <Button onClick={toggleTaskModal} className="gap-2">
+                <Button onClick={()=>toggleTaskModal(true)} className="gap-2">
                     <Plus className="h-4 w-4" />
                     Add Task
                 </Button>
