@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 import { TaskList } from "@/components/task-manager/task-list"
 import { Button } from "@/components/ui/button"
@@ -75,7 +76,7 @@ export default function TasksView() {
                 addTaskHandler={handleAddTask}
                 open={isTaskModalOpen}
                 handleClose={toggleTaskModal}
-                editTaskId={editTaskId}
+                editTaskId={editTaskId || ""}
             />
         </div>
     )

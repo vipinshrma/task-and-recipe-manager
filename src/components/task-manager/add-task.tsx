@@ -38,7 +38,7 @@ interface AddTaskProps {
   open: boolean;
   handleClose: (isOpen: boolean) => void;
   addTaskHandler: (task: TaskFormValues) => void;
-  editTaskId:string
+  editTaskId?:string
 }
 
 
