@@ -14,6 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { IngredientView } from "./ingredient-view"
+import Image from "next/image"
 
 interface Recipe {
   idMeal: string
@@ -94,6 +95,7 @@ export function RecipeView() {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHead className="w-[100px]">Image</TableHead>
                 <TableHead className="w-[200px]">Name</TableHead>
                 <TableHead>Ingredients</TableHead>
                 <TableHead>Instructions</TableHead>
@@ -102,6 +104,16 @@ export function RecipeView() {
             <TableBody>
               {recipes?.map((recipe) => (
                 <TableRow key={recipe.idMeal}>
+                  <TableCell>
+                    <div className="w-20 h-20 relative">
+                      <Image
+                        src={recipe.strMealThumb}
+                        alt={recipe.strMeal}
+                        fill
+                        className="object-cover rounded"
+                      />
+                    </div>
+                  </TableCell>
                   <TableCell className="font-medium">{recipe.strMeal}</TableCell>
                   <TableCell className="max-w-[300px] line-clamp-3">
                     {getIngredients(recipe)}
